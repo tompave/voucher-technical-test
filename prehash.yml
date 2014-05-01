@@ -1,0 +1,16 @@
+environment: ruby-2.0.0
+
+# Dont allow adjustments in integration spec
+readonly:
+  - spec/integration_spec.rb
+
+# Open integration spec first
+start: - spec/integration_spec.rb
+
+# Hide irrelevant files which would just make noise
+hide:
+  - node_modules/
+  - run.sh
+  - .gitignore
+  - .bundle/
+  - README.md
