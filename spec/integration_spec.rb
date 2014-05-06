@@ -3,7 +3,7 @@ require 'user'
 describe "Integration" do
   let(:user) { User.new(voucher) }
 
-  describe 'no voucher' do
+  context 'no voucher' do
     let(:voucher) { nil }
 
     it 'should bill default price all the time' do
@@ -16,7 +16,7 @@ describe "Integration" do
     end
   end
 
-  describe 'vouchers' do
+  context 'vouchers' do
     describe 'default vouchers' do
       let(:voucher) { Voucher.new(:default, credit: 15) }
 
