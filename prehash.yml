@@ -9,7 +9,6 @@ start: - spec/integration_spec.rb
 
 # Hide irrelevant files which would just make noise
 hide:
-  - node_modules/
   - run.sh
   - .gitignore
   - .bundle/
