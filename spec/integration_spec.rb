@@ -48,7 +48,7 @@ describe "Integration" do
 
       context 'pay with first order' do
         let(:voucher) { Voucher.new(:discount, discount: 50, number: 3, instant: true) }
-        it 'should be paid instantly' do
+        it 'should pay 3 bags instantly and charge forth normally' do
           user.bill
           expect(user.orders[0].billed_for).to eql 10.425
           user.bill
@@ -56,7 +56,7 @@ describe "Integration" do
           user.bill
           expect(user.orders[2].billed_for).to eql 0
           user.bill
-          expect(user.orders[1].billed_for).to eql 6.95
+          expect(user.orders[3].billed_for).to eql 6.95
         end
       end
     end
