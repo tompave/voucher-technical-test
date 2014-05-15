@@ -5,7 +5,7 @@ readonly:
   - spec/integration_spec.rb
 
 # Open integration spec first
-start: - spec/integration_spec.rb
+start: spec/integration_spec.rb
 
 # Hide irrelevant files which would just make noise
 hide:
