@@ -7,4 +7,4 @@ cd $Path
 source /usr/local/rvm/scripts/rvm
 rvm use ruby-2.0.0-p195
 
-bundle install
+bundle install --gemfile $Path/Gemfile --path $Path/vendor/bundle
