@@ -7,8 +7,10 @@ So please think about the implementation a bit, properly test your methods and t
 And here's our task:
 ----
 Fix, Refactor and make our Order/Voucher feature working.
-There's no note on the feature itself as sometimes we just must trust what specs says.
+There's no note on the feature itself as sometimes we must follow what specs says.
 Please use Itegration spec to guide you through.
+
+There are some catches in the code (not in the integration spec). You have been warned! :)
 
 The test itself should be very easy but you can prove your passion and you can impress us with 'few lines of code' thankfully to Prehash.
 
