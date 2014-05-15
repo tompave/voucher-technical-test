@@ -22,9 +22,9 @@ describe "Integration" do
 
       it 'should not bill user if has a remaining credit' do
         user.bill
-        expect(user.orders[0].billed_for).to eql 0
+        expect(user.orders[0].billed_for).to eql 0.0
         user.bill
-        expect(user.orders[1].billed_for).to eql 0
+        expect(user.orders[1].billed_for).to eql 0.0
         user.bill
         expect(user.orders[2].billed_for).to eql 1.1
       end
@@ -52,9 +52,9 @@ describe "Integration" do
           user.bill
           expect(user.orders[0].billed_for).to eql 10.425
           user.bill
-          expect(user.orders[1].billed_for).to eql 0
+          expect(user.orders[1].billed_for).to eql 0.0
           user.bill
-          expect(user.orders[2].billed_for).to eql 0
+          expect(user.orders[2].billed_for).to eql 0.0
           user.bill
           expect(user.orders[3].billed_for).to eql 6.95
         end
