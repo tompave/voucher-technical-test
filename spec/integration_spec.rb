@@ -18,7 +18,7 @@ describe "Integration" do
 
   context 'vouchers' do
     describe 'default vouchers' do
-      let(:voucher) { Voucher.new(:default, credit: 15) }
+      let(:voucher) { Voucher.create(:default, credit: 15) }
 
       it 'should not bill user if has a remaining credit' do
         user.bill
@@ -32,7 +32,7 @@ describe "Integration" do
 
     describe 'discount vouchers' do
       context 'pay as you go' do
-        let(:voucher) { Voucher.new(:discount, discount: 50, number: 3) }
+        let(:voucher) { Voucher.create(:discount, discount: 50, number: 3) }
 
         it 'should bill the right ammount' do
           user.bill
@@ -47,7 +47,7 @@ describe "Integration" do
       end
 
       context 'pay with first order' do
-        let(:voucher) { Voucher.new(:discount, discount: 50, number: 3, instant: true) }
+        let(:voucher) { Voucher.create(:discount, discount: 50, number: 3, instant: true) }
         it 'should pay 3 bags instantly and charge forth normally' do
           user.bill
           expect(user.orders[0].billed_for).to eql 10.425

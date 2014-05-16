@@ -1,16 +1,7 @@
 class Voucher
   attr_accessor :credit, :type
-  def initialize(credit, type)
-    @credit = credit
-    @type = type
-  end
 
-  def type
-    @credit
-  end
-
-  def credit
-    @type
+  def self.create(type, *attrs)
   end
 
   def billed_for
