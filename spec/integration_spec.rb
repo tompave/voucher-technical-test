@@ -26,7 +26,7 @@ describe "Integration" do
         user.bill
         expect(user.orders[1].billed_for).to eql 0.0
         user.bill
-        expect(user.orders[2].billed_for).to eql 1.1
+        expect(user.orders[2].billed_for).to eql 5.85
       end
     end
 
