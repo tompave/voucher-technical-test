@@ -12,6 +12,8 @@ Please use Itegration spec to guide you through.
 
 There are some catches in the code (not in the integration spec). You have been warned! :)
 
+A small hint: Voucher class uses [Factory method pattern](http://en.wikipedia.org/wiki/Factory_method_pattern) to initialize itself.
+
 The test itself should be very easy but you can prove your passion and you can impress us with 'few lines of code' thankfully to Prehash.
 
 Good Luck!
