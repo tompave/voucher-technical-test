@@ -1,13 +1,27 @@
 class Order
   DEFAULT_PRICE = 6.95
 
-  attr_accessor :user
+  attr_writer :billed_for
 
-  def initialize(user)
+  # Initialize with a reference to the User and
+  # the base price for the Order
+  #
+  def initialize(user, price=nil)
     @user = user
+    @price = price
   end
 
+
+  # The base price for the order.
+  #
+  def price
+    @price || DEFAULT_PRICE
+  end
+
+
+  # What the Oder will actually be paid
+  #
   def billed_for
-    DEFAULT_PRICE
+    @billed_for || price
   end
 end
