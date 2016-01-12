@@ -22,5 +22,7 @@ We expect:
  
 If you have some spare time, describe and add a new voucher of your choice.
 
+We look forward to your pull request.
+
 Good Luck!
 ===
