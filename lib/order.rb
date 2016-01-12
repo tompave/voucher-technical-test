@@ -8,10 +8,6 @@ class Order
   end
 
   def billed_for
-    price = DEFAULT_PRICE
-    user.orders.each do |order|
-      price - order.billed_for
-    end
-    price
+    DEFAULT_PRICE
   end
 end
