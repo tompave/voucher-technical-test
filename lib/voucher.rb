@@ -7,7 +7,14 @@ class Voucher
 
 
   def initialize(type, **attrs)
-    @type     = type
+    @type = type
+    extract_options(attrs)
+  end
+
+  private
+
+
+  def extract_options(attrs)
     @credit   = attrs[:credit]
     @discount = attrs[:discount]
     @number   = attrs[:number]
