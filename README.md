@@ -1,20 +1,26 @@
-As most of founded startups outside, we ran into 'messy code' issue.
-We decided that we must start to think about our architecture, properly test everything and start to separate code into modules.
+Pact coffee delivery freshly roasted coffee by post.
 
-Most of our classes are very chained and time to implement a feature/fix bug is increasing exponentially.
-So please think about the implementation a bit, properly test your methods and try to avoid 'code chaining'.
+Context
+---
+As a busines we acquire new customers from marketing channels,
+We incentivise a new customers first bag of coffee because we know our coffee is incredible
+We have a range of incentives to entice new customers
 
-And here's our task:
+*This is a high level overview to set the context for this test*
+
+Your task
 ----
-Fix, Refactor and make our Order/Voucher feature working.
-There's no note on the feature itself as sometimes we must follow what specs says.
-Please use Itegration spec to guide you through.
+Fix and refactor the codebase. Make the specs green and ensure that it's working as expected.
+Use the itegration spec to guide you through.
 
-There are some catches in the code (not in the integration spec). You have been warned! :)
+The test itself is pretty straight forward but your solution will require you to make design and product decisions.
 
-A small hint: Voucher class uses [Factory method pattern](http://en.wikipedia.org/wiki/Factory_method_pattern) to initialize itself.
-
-The test itself should be very easy but you can prove your passion and you can impress us with 'few lines of code' thankfully to Prehash.
+We expect:
+- clean code
+- a commit history (so we can understand your thought process)
+- green specs
+ 
+If you have some spare time, describe and add a new voucher of your choice.
 
 Good Luck!
 ===
