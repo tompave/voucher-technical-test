@@ -2,7 +2,7 @@ Pact coffee delivery freshly roasted coffee by post.
 
 Context
 ---
-As a busines we acquire new customers from marketing channels,
+As a business we acquire new customers from marketing channels,
 We incentivise a new customers first bag of coffee because we know our coffee is incredible
 We have a range of incentives to entice new customers
 
@@ -11,7 +11,7 @@ We have a range of incentives to entice new customers
 Your task
 ----
 Fix and refactor the codebase. Make the specs green and ensure that it's working as expected.
-Use the itegration spec to guide you through.
+Use the integration spec to guide you through.
 
 The test itself is pretty straight forward but your solution will require you to make design and product decisions.
 
