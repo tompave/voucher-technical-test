@@ -3,6 +3,13 @@ module Vouchers
 
     private
 
+    # Charges immediately the _discounted_ price of N orders.
+    # The initial charged amount is based on the actual price of the first
+    # order plus the assumed price of the remaining orders, based on the default
+    # price.
+    # This creates a credit in the voucer, which is reduced as new orders
+    # are billed until it goes back to zero.
+    #
     def price_from_instant_discount(base_price)
       if @credit
         if @credit > 0
