@@ -15,12 +15,12 @@ class Voucher
   def billing_price_for(order)
     case type
     when :default
-      price_for_default(order.price)
+      price_from_credit(order.price)
     when :discount
       if @instant
-        price_for_instant_discount(order.price)
+        price_from_instant_discount(order.price)
       else
-        price_for_discount(order.price)
+        price_from_discount(order.price)
       end
     else
       raise "don't know Voucher type: '#{type}'."
@@ -39,7 +39,7 @@ class Voucher
   end
 
 
-  def price_for_default(base_price)
+  def price_from_credit(base_price)
     if @credit > 0
       @credit -= base_price
       if @credit >= 0
@@ -53,7 +53,7 @@ class Voucher
   end
 
 
-  def price_for_discount(base_price)
+  def price_from_discount(base_price)
     if @number > 0
       @number -= 1
       discounted(base_price)
@@ -63,10 +63,10 @@ class Voucher
   end
 
 
-  def price_for_instant_discount(base_price)
+  def price_from_instant_discount(base_price)
     if @credit
       if @credit > 0
-        price_for_default(price_for_discount(base_price)).round(3)
+        price_from_credit(price_from_discount(base_price)).round(3)
       else
         base_price
       end
