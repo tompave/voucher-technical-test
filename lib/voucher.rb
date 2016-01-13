@@ -50,6 +50,11 @@ class Voucher
 
 
   def price_for_discount(order)
-    order.price
+    if @number > 0
+      @number -= 1
+      (@discount * order.price * 0.01).round(3)
+    else
+      order.price
+    end
   end
 end
