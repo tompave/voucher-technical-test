@@ -10,8 +10,8 @@ class User
   end
 
 
-  def bill
-    new_order = Order.new(self)
+  def bill(order_price=nil)
+    new_order = Order.new(self, order_price)
 
     if voucher
       new_order.billed_for = voucher.billing_price_for(new_order)

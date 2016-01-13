@@ -6,7 +6,7 @@ class Order
   # Initialize with a reference to the User and
   # the base price for the Order
   #
-  def initialize(user, price=nil)
+  def initialize(user, price)
     @user = user
     @price = price
   end
