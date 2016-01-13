@@ -1,5 +1,5 @@
 class Voucher
-  attr_reader :type, :credit, :discount, :number, :instant
+  attr_reader :type
 
   def self.create(type=:default, **attrs)
     new(type, attrs)
