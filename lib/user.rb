@@ -9,8 +9,13 @@ class User
     @orders = orders
   end
 
+
   def bill
     new_order = Order.new(self)
+
+    if voucher
+      new_order.billed_for = voucher.billing_price_for(new_order)
+    end
 
     @orders << new_order
   end
