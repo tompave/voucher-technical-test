@@ -17,7 +17,11 @@ class Voucher
     when :default
       price_for_default(order.price)
     when :discount
-      price_for_discount(order.price)
+      if @instant
+        price_for_instant_discount(order.price)
+      else
+        price_for_discount(order.price)
+      end
     else
       raise "don't know Voucher type: '#{type}'."
     end
@@ -58,10 +62,40 @@ class Voucher
     end
   end
 
+
+  def price_for_instant_discount(base_price)
+    if @credit
+      if @credit > 0
+        price_for_default(price_for_discount(base_price)).round(3)
+      else
+        base_price
+      end
+    else
+      setup_initial_credit(base_price)
+      to_be_paid_now = @credit
+      charge_initial_order(base_price)
+      to_be_paid_now
+    end
+  end
+
+
   def discounted(base)
     (@discount * base * 0.01).round(3)
   end
 
+
+  def setup_initial_credit(base_price)
+    @credit = begin
+      this_order_price = discounted(base_price)
+      assumed_remaining_price = discounted(Order::DEFAULT_PRICE) * (@number - 1)
+      this_order_price + assumed_remaining_price
     end
   end
+
+
+  def charge_initial_order(price)
+    @credit -= discounted(price)
+    @number -= 1
+  end
+
 end
