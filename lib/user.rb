@@ -1,5 +1,5 @@
 require 'order'
-require 'voucher'
+require 'vouchers'
 
 class User
   attr_accessor :voucher, :orders
